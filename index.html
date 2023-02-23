@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seafood Depot | Site underconstruction</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background-image: linear-gradient(135deg, white, #c0c0c0);
+      font-size: 16px;
+    }
+
+    p {
+      font-family: inherit;
+      color: #848482;
+    }
+
+    .container {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3em;
+      margin: 0 auto;
+    }
+
+    .logo {
+      width: 25em;
+      margin-top: 2em;
+    }
+
+    .address__text {
+      font-size: 1.2rem;
+      text-align: center;
+    }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .contact > div {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .contact__icon {
+      width: 7%;
+      filter: invert(10%) sepia(11%) saturate(2279%) hue-rotate(164deg)
+        brightness(96%) contrast(86%);
+      box-sizing: border-box;
+    }
+
+    .contact__text {
+      width: 93%;
+      padding-left: 0.25em;
+      box-sizing: border-box;
+    }
+
+    @media all and (max-device-width: 25.875em) and (-webkit-min-device-pixel-ratio: 1) {
+      .container {
+        width: 100vw;
+      }
+
+      .contact {
+        margin: 10% 0 0 20%;
+      }
+
+      .contact > div {
+        margin-bottom: 0.75em;
+      }
+    }
+
+    @media all and (min-device-width: 80em) and (-webkit-min-device-pixel-ratio: 1) {
+      .container {
+        max-width: 36em;
+      }
+
+      .contact {
+        margin: 0 3em 0;
+      }
+
+      .contact > div {
+        width: 50%;
+      }
+    }
+  </style>
+
+  <body>
+    <div class="container">
+      <div class="logo">
+        <img
+          src="/img/seafood-depot-logo.svg"
+          alt="Seafood Depot Logo"
+          class="logo"
+        />
+      </div>
+      <div class="address">
+        <p class="address__text">
+          7520 NW 104th Ave Ste A103 PMB 4222 Doral, FL 33178-3374
+        </p>
+      </div>
+      <div class="contact">
+        <div class="contact__phone">
+          <img
+            src="/img/phone-solid.svg"
+            alt="Phone icon"
+            class="contact__icon"
+          />
+          <p class="contact__text">+1-517-6140802</p>
+        </div>
+        <div class="contact__mail">
+          <img
+            src="/img/envelope-solid.svg"
+            alt="Envelope icon"
+            class="contact__icon"
+          />
+          <p class="contact__text">m.perez@sefooddepotllc.com</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
