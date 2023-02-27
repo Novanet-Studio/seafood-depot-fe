@@ -1,13 +1,17 @@
 ---
+import { Markdown } from '@astropub/md'
+import { Modal } from "accessible-astro-components";
+
 export interface Props {
   titulo: string;
   descripcion?: string;
   resim?: string;
-  link?: string;
-}
-const { titulo, descripcion , resim, link } = Astro.props as Props;
----
+  triggerId?: string;
+  list?: string;
 
+}
+const { titulo, descripcion, resim, triggerId, list } = Astro.props as Props;
+---
 
 <div class="card">
   <figure><img src={resim} alt={titulo} /></figure>
@@ -15,12 +19,21 @@ const { titulo, descripcion , resim, link } = Astro.props as Props;
     <h2 class="card-title">{titulo}</h2>
     <p>{descripcion}</p>
     <div class="card-actions justify-end">
-      <a class="btn btn-primary" href={link} >more</a>
+      <button id={triggerId} class="btn btn-primary">more</button>
     </div>
+    <Modal triggerId={triggerId} title={titulo}>
+      <Markdown of={list} />
+    </Modal>
   </div>
 </div>
-<style>
+<style is:global>
   .card {
-    @apply shadow-xl relative flex flex-col;
+    @apply shadow-xl relative flex flex-col border-none !important;
   }
-</style>
+  .modal__inner {
+    @apply border-none rounded-lg !important;
+  }
+  .modal__close button {
+    @apply p-4
+  }
+  </style>

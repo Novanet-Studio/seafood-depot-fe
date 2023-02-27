@@ -1,4 +1,6 @@
 ---
+import { markdown } from '@astropub/md'
+
 export interface Props {
   title: string;
   text?: string;
@@ -20,7 +22,7 @@ const id = Astro.props.id;
         </div>
         <div class="max-w-3xl mx-auto">
           <p class="text-xl text-neutral mb-8 dark:text-slate-400">
-            {text}
+            {await markdown(text)}
           </p>
         </div>
       </div>

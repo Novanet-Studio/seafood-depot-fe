@@ -6,8 +6,14 @@ export interface Props {
   idB?: string;
 }
 
-const  { idA, idB } = Astro.props;
+const { idA, idB } = Astro.props;
 
+const seaList = `- Needlefish - Swordfish - Sailfish.\n - Tuna - Albacore.\n - Catfish.\n - Tuna Lomo.\n - King Mackerel.\n - White grunt.\n - Mahi-Mahi.\n - Tripletail.\n - Yellowtail - Amberjack.\n - Hake.\n - Yellowedge grouper.\n - Snapper.\n - Wahoo.\n - Snook.\n - Yellow croacker.\n - Ribbon Fish- Belt Fish`;
+
+const freshwatweList = `- Pacu.\n - Piranha.\n - Coporo.\n - White Drum.\n - Kwie-Kwie-Hassa.\n - Paiche-Pirarucu.\n - Peacoks Bass.\n - Yellowfin River.\n - Red Tilapia and Tilapia`;
+
+const seafoodList = `- Octopus.\n- Spiny Lobster.
+`;
 ---
 
 <section>
@@ -36,18 +42,22 @@ const  { idA, idB } = Astro.props;
         <BasicCard
           titulo="Sea species"
           resim="https://res.cloudinary.com/novanet-studio/image/upload/v1675095143/vpas/uploads/vpas_especie_de_mar_pargo_1e5699a73d.webp"
-          link="/"
-        />      
+          triggerId="modal1-trigger"
+          list={seaList}
+        />
 
         <BasicCard
           titulo="Freshwater species"
           resim="https://res.cloudinary.com/novanet-studio/image/upload/v1675095143/vpas/uploads/vpas_especie_de_agua_dulce_cachama_4005e8d63c.webp"
-          link="/"
+          triggerId="modal2-trigger"
+          list={freshwatweList}
         />
+
         <BasicCard
           titulo="Seafood species"
           resim="https://res.cloudinary.com/novanet-studio/image/upload/v1675095143/vpas/uploads/vpas_marisco_langosta_eda43a408b.webp"
-          link="/"
+          triggerId="modal3-trigger"
+          list={seafoodList}
         />
       </div>
     </div>
