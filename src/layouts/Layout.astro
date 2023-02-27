@@ -18,16 +18,17 @@ const title = Astro.props.title || settings.title;
 const description = Astro.props.description || settings.description;
 ---
 
-<html lang="tr" data-theme="corporate">
+<html lang="es" data-theme="business">
 <BaseHead title={title} description={description}  />
 <body>
   <BasicNavbar >
-	<li><a href="/urunler">Ürünler</a></li>
-	<li><a href="/hakkimizda">Hakkımızda</a></li>
-	<li><a href="/iletisim">İletişim</a></li>	
+	<li><a href="#whatwedo">What we do</a></li>
+	<li><a href="#company">The company</a></li>
+	<li><a href="#products">Products</a></li>	
+	<li><a href="#contact">Contact</a></li>	
   </BasicNavbar>
   <slot />
-  <Footer />
+  <Footer idA="contact"/>
 </body>
 </html>
 

@@ -1,51 +1,54 @@
 ---
 import BasicCard from "../cards/BasicCard.astro";
-  const { } = Astro.props;
+
+export interface Props {
+  idA?: string;
+  idB?: string;
+}
+
+const  { idA, idB } = Astro.props;
+
 ---
-<section >
+
+<section>
   <div class="features-container">
     <div class="features-padding">
-      <div class="ust">
-        <p class="ust-baslik">
-          Basc Features
+      <div id={idA} class="ust">
+        <p class="ust-baslik">The company</p>
+        <h2>Vision</h2>
+        <p class="ust-p">
+          Buy and distribute hydrobiological products with the highest quality
+          standards; to satisfy our clients, through a modern, innovative and
+          efficient management with a direct treatment.
         </p>
-        <h2> Most used Sections</h2>
-        <p class="ust-p">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-          dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat.</p>
       </div>
-      <div class="alt">
-        <BasicCard baslik="Başlık" 
-        resim="https://placeimg.com/300/150/arch/grayscale"
-        link="urunler"
-        metin="Quis at ut quae temporibus aut magnam et ad. Molestias quas quos vel. Officia neque odio iusto animi odit omnis occaecati et." 
-        />
-        <BasicCard baslik="Başlık" 
-        resim="https://placeimg.com/300/150/arch/grayscale"
-        link="urunler"
-        metin="Quis at ut quae temporibus aut magnam et ad. Molestias quas quos vel. Officia neque odio iusto animi odit omnis occaecati et." 
-        />
-        <BasicCard baslik="Başlık" 
-        resim="https://placeimg.com/300/150/arch/grayscale"
-        link="urunler"
-        metin="Quis at ut quae temporibus aut magnam et ad. Molestias quas quos vel. Officia neque odio iusto animi odit omnis occaecati et." 
-        />
-        <BasicCard baslik="Başlık" 
-        resim="https://placeimg.com/300/150/arch/grayscale"
-        link="urunler"
-        metin="Quis at ut quae temporibus aut magnam et ad. Molestias quas quos vel. Officia neque odio iusto animi odit omnis occaecati et." 
-        />
-        <BasicCard baslik="Başlık" 
-        resim="https://placeimg.com/300/150/arch/grayscale"
-        link="urunler"
-        metin="Quis at ut quae temporibus aut magnam et ad. Molestias quas quos vel. Officia neque odio iusto animi odit omnis occaecati et." 
-        />
-        <BasicCard baslik="Başlık" 
-        resim="https://placeimg.com/300/150/arch/grayscale"
-        link="urunler"
-        metin="Quis at ut quae temporibus aut magnam et ad. Molestias quas quos vel. Officia neque odio iusto animi odit omnis occaecati et." 
-        />
+      <div class="ust">
+        <p class="ust-baslik">The company</p>
+        <h2>Mision</h2>
+        <p class="ust-p">
+          To be a leading company in the purchase, distribution and export of
+          hydrobiological resources with the highest quality standards,
+          incorporating our products in the most demanding markets worldwide.
+        </p>
+      </div>
+      <h1>Products</h1>
+      <div id={idB} class="alt">
+        <BasicCard
+          titulo="Sea species"
+          resim="https://res.cloudinary.com/novanet-studio/image/upload/v1675095143/vpas/uploads/vpas_especie_de_mar_pargo_1e5699a73d.webp"
+          link="/"
+        />      
 
-        
+        <BasicCard
+          titulo="Freshwater species"
+          resim="https://res.cloudinary.com/novanet-studio/image/upload/v1675095143/vpas/uploads/vpas_especie_de_agua_dulce_cachama_4005e8d63c.webp"
+          link="/"
+        />
+        <BasicCard
+          titulo="Seafood species"
+          resim="https://res.cloudinary.com/novanet-studio/image/upload/v1675095143/vpas/uploads/vpas_marisco_langosta_eda43a408b.webp"
+          link="/"
+        />
       </div>
     </div>
   </div>
@@ -53,7 +56,7 @@ import BasicCard from "../cards/BasicCard.astro";
 
 <style>
   section {
-    @apply relative ;
+    @apply relative;
   }
   .features-container {
     @apply relative max-w-6xl mx-auto px-4 sm:px-6;
@@ -62,19 +65,21 @@ import BasicCard from "../cards/BasicCard.astro";
     @apply py-4 pt-8 sm:py-6 lg:py-8 lg:pt-12;
   }
   .ust {
-    @apply mb-8 text-center text-primary;
+    @apply mb-16 text-center text-primary;
   }
-  h2{
-    @apply sm:text-3xl text-2xl font-medium text-center  mb-20;
+  h1 {
+    @apply text-center pb-10;
+  }
+  h2 {
+    @apply sm:text-3xl text-lg font-bold text-center  mb-1;
   }
   .ust-baslik {
     @apply text-base  font-semibold tracking-wide uppercase;
   }
   .ust-p {
-    @apply max-w-3xl mx-auto text-center text-xl ;
+    @apply max-w-3xl mx-auto text-center text-xl;
   }
   .alt {
     @apply grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start my-12 dark:text-white;
   }
-
 </style>
