@@ -1,0 +1,67 @@
+---
+import { Icon } from 'astro-icon';
+import Logo from "../Logo.astro";
+---
+<header>
+  <div class="header-container">
+    <div class="flex justify-between">
+      <a class="flex items-start" href="/">
+        <Logo />
+      </a>
+      <div class="flex items-center lg:hidden mr-4">
+        <a onclick="toggleMenu()">
+          <Icon  name="gg:menu-right-alt"/>
+        </a>
+      </div>
+    </div>
+    <div id="menu" class="hidden lg:flex">
+      <ul  class="navbar-nav ">
+        <slot />
+      </ul>
+    </div>
+  </div>
+</header>
+<script is:inline>
+  window.toggleMenu = toggleMenu;
+  function toggleMenu() {
+    document.getElementById("menu").classList.toggle("hidden");
+  }
+  
+</script>
+<script is:inline>
+  const mainNav = document.querySelector('#menu')
+  const mainMenu = mainNav.querySelector('ul')
+  setActiveMenuItem();
+  function setActiveMenuItem ()  {
+    const menuItems = [...mainMenu.querySelectorAll('a:not([rel*="external"])')];
+    menuItems.forEach(menuItem => {
+      if (menuItem.getAttribute("href") === window.location.pathname) {
+        menuItem.classList.add('active')
+        menuItem.setAttribute('aria-current', 'page')
+      }
+    })
+  }
+  
+</script>
+<style>
+  header{
+    @apply fixed z-40 flex-none mx-auto w-full bg-secondary/90;
+    @apply  dark:bg-slate-900 backdrop-blur-sm border-b dark:border-b-0;
+  }
+  .header-container {
+    @apply py-3 px-3 mx-auto w-full lg:flex lg:justify-between max-w-6xl lg:px-4;
+  }
+
+  #menu {
+    @apply items-center w-full lg:w-auto;
+  }
+
+  [astro-icon] {
+  @apply w-5 h-5;
+  }
+  ul {
+    @apply flex flex-col py-2 lg:py-0 lg:flex-row lg:self-center  w-full lg:w-auto ;
+    @layer collapse collapsed;
+  }
+
+</style>

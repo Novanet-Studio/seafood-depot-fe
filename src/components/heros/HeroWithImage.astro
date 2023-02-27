@@ -1,0 +1,44 @@
+---
+export interface Props {
+	title: string;
+	text?: string;
+	image?: string;
+}
+const title = Astro.props.title 
+const text = Astro.props.text 
+const image = Astro.props.image 
+
+---
+
+<section>
+  <div class=" max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="pt-32 pb-12 md:pt-40 md:pb-20">
+      <div class="text-center pb-12 md:pb-16 ">
+        <div class="prose prose-headings:text-primary mx-auto">
+          <h1> {title} </h1>
+        </div>
+        <div class="max-w-3xl mx-auto">
+          <p class="text-xl text-neutral  mb-8 dark:text-slate-400">
+            {text}
+          </p>
+          <div class="max-w-none flex justify-center  ">
+            <div>
+              <a class="btn btn-primary mb-4 sm:mb-0" href="#0">Get
+                started</a>
+            </div>
+            <div>
+              <a class="btn btn-secondary  ml-4" href="#0">Learn more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="relative flex justify-center mb-8  ">
+          <div class="flex flex-col justify-center">
+            <img class="mx-auto rounded-md" src={image} width="768" height="432" alt="Hero">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

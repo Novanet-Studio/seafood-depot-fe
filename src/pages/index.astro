@@ -1,0 +1,31 @@
+---
+import Layout from '~/layouts/Layout.astro';
+
+import BasicFeatures from '~/components/features/BasicFeatures.astro';
+import StepsFeatures from '~/components/features/StepsFeatures.astro';
+import HeroWithImage from '~/components/heros/HeroWithImage.astro';
+import CenteredHero from '~/components/heros/CenteredHero.astro';
+import CarouselWithButtons from '~/components/carousels/CarouselWithButtons.astro';
+const HeroWithImageText = ` 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+`
+---
+
+<Layout title="Astro + Tailwind CSS" description="page desc">
+	<main>
+		<CarouselWithButtons />
+		<HeroWithImage title="Hi" text={HeroWithImageText} image="/images/hero.webp"/>
+		<div class="divider"></div> 
+		<BasicFeatures />
+		<div class="divider divide-secondary"></div> 
+		<StepsFeatures />
+		<div class="divider"></div> 
+		<CenteredHero title="Hi you all" />
+	</main>
+</Layout>
+<style>
+	main {
+		@apply relative;
+	}
+</style>
