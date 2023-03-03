@@ -1,8 +1,8 @@
 <section>
   <div class="carousel w-full">
-    <div id="slide1" class="carousel-item relative w-full">
+    <div id="slide1" class="carousel__slider">
       <img
-        src="https://res.cloudinary.com/novanet-studio/image/upload/v1675095252/vpas/uploads/vpas_fondo_mar_y_peces_854a29677a.webp"
+        src="https://res.cloudinary.com/novanet-studio/image/upload/v1677862994/vpas/uploads/seafood_depot_bote_orilla_playa_6194848190.webp"
         class="w-full"
       />
       <div
@@ -12,9 +12,9 @@
         <a href="#slide2" class="btn btn-circle">▶</a>
       </div>
     </div>
-    <div id="slide2" class="carousel-item relative w-full">
+    <div id="slide2" class="carousel__slider">
       <img
-        src="https://res.cloudinary.com/novanet-studio/image/upload/v1675095252/vpas/uploads/vpas_mar_y_peces_55553a88a9.webp"
+        src="https://res.cloudinary.com/novanet-studio/image/upload/v1677862995/vpas/uploads/seafood_depot_canoas_rio_98124f4e25.webp"
         class="w-full"
       />
       <div
@@ -30,5 +30,9 @@
 <style>
   .btn {
     @apply bg-primary text-white border-none text-xs;
-  }  
+  }
+
+  .carousel__slider {
+    @apply carousel-item relative w-full carousel-item relative w-full pt-20;
+  }
 </style>
